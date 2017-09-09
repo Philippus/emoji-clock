@@ -1,4 +1,4 @@
-package emojiclock
+package nl.gn0s1s.emojiclock
 
 import com.lightbend.emoji.ShortCodes
 import com.lightbend.emoji.ShortCodes.Defaults._

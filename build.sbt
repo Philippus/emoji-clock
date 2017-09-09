@@ -1,11 +1,16 @@
 name := "emoji-clock"
+organization := "nl.gn0s1s"
 version := "0.1"
 startYear := Some(2017)
-licenses := Seq("The MIT License (MIT)" -> url("http://opensource.org/licenses/MIT"))
+homepage := Some(url("https://github.com/philippus/emoji-clock"))
+licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 
 scalaVersion := "2.12.3"
 
+bintrayOrganization := Some("gn0s1s")
+bintrayRepository := "releases"
+
 resolvers += Resolver.typesafeIvyRepo("releases")
 libraryDependencies ++= Seq(
-  "com.lightbend" %% "emoji" % "1.1.1",
+  "com.lightbend" %% "emoji" % "1.1.1" % Test,
   "org.scalacheck" %% "scalacheck" % "1.13.4" % Test)

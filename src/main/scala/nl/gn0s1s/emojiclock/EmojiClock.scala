@@ -1,4 +1,4 @@
-package emojiclock
+package nl.gn0s1s.emojiclock
 
 object EmojiClock {
   def clockFaceShortCode(hour: Int, minute: Int): String = {
