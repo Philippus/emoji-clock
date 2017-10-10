@@ -16,8 +16,14 @@ libraryDependencies ++= Seq(
   "org.scalacheck" %% "scalacheck" % "1.13.4" % Test)
 
 pomExtra :=
-  <url>github.com/philippus/emoji-clock</url>
-    <scm>
-      <url>git@github.com:Philippus/emoji-clock.git</url>
-      <connection>scm:git@github.com:Philippus/emoji-clock.git</connection>
-    </scm>
+  <scm>
+    <url>git@github.com:Philippus/emoji-clock.git</url>
+    <connection>scm:git@github.com:Philippus/emoji-clock.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>philippus</id>
+      <name>Philippus Baalman</name>
+      <url>https://github.com/philippus</url>
+    </developer>
+  </developers>
