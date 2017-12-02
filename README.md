@@ -5,7 +5,9 @@
 ![Current Version](https://img.shields.io/badge/version-0.1.2-brightgreen.svg?style=flat "0.1.2")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat "MIT")](LICENSE.md)
 
-Emoji-clock generates the nearest emoji clock face short code for a given time.
+Emoji-clock has the following features:
+- generate the nearest emoji clock face short code for a given time.
+- generate the current moon phase short code for a given time.
 
 To view the emoji itself you will need an emoji library such as [Lightbend Emoji](https://github.com/typesafehub/lightbend-emoji).
 
@@ -21,7 +23,7 @@ libraryDependencies += "nl.gn0s1s" %% "emoji-clock" % "0.1.2"
 
 ## Example usage
 
-Follow the Lightbend Emoji [installation instructions](https://github.com/typesafehub/lightbend-emoji#installation) also for this example:
+Follow the Lightbend Emoji [installation instructions](https://github.com/typesafehub/lightbend-emoji#installation) also for these examples:
 
 ```scala
 import nl.gn0s1s.emojiclock.EmojiClock
@@ -37,6 +39,22 @@ EmojiClock.now() // at 16:44
 // res2: String = clock430
 EmojiClock.now().emoji
 // res3: com.lightbend.emoji.Emoji = 🕟
+```
+
+```scala
+import nl.gn0s1s.emojiclock.EmojiLunarPhase
+import com.lightbend.emoji.ShortCodes.Defaults._
+import com.lightbend.emoji.ShortCodes.Implicits._
+
+EmojiLunarPhase.moonPhaseShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
+// res0: String = full_moon
+EmojiLunarPhase.moonPhaseShortCode(java.time.LocalDateTime.of(2017, 12, 10, 0, 0)).emoji
+// res1: com.lightbend.emoji.Emoji = 🌗
+
+EmojiLunarPhase.now() // at 1st December 2017
+// res2: String = full_moon
+EmojiLunarPhase.now().emoji
+// res3: com.lightbend.emoji.Emoji = 🌕
 ```
 
 ## License
