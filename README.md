@@ -57,5 +57,8 @@ EmojiLunarPhase.now().emoji
 // res3: com.lightbend.emoji.Emoji = 🌕
 ```
 
+## Links
+- Emo R package that does something similar for R - https://github.com/hadley/emo
+
 ## License
 The code is available under the [MIT license](LICENSE.md).
