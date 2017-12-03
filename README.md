@@ -8,6 +8,7 @@
 Emoji-clock has the following features:
 - generate the nearest emoji clock face short code for a given time.
 - generate the emoji moon phase short code for a given time.
+- generate the (tropical) zodiac sign short code for a given date.
 
 To view the emoji itself you will need an emoji library such as [Lightbend Emoji](https://github.com/typesafehub/lightbend-emoji).
 
@@ -57,8 +58,26 @@ EmojiLunarPhase.now().emoji
 // res3: com.lightbend.emoji.Emoji = 🌕
 ```
 
+```scala
+import nl.gn0s1s.emojiclock.EmojiZodiacSign
+import com.lightbend.emoji.ShortCodes.Defaults._
+import com.lightbend.emoji.ShortCodes.Implicits._
+
+EmojiZodiacSign.zodiacSignShortCode(2018, 1, 31)
+// res0: String = aquarius
+EmojiZodiacSign.zodiacSignShortCode(2017, 5, 5).emoji
+// res1: com.lightbend.emoji.Emoji = ♉
+
+EmojiZodiacSign.now() // at 2nd December 2017
+// res2: String = sagittarius
+EmojiZodiacSign.now().emoji
+// res3: com.lightbend.emoji.Emoji = ♐
+```
+
 ## Links
 - Emo R package that does something similar for R - https://github.com/hadley/emo
+- Sidereal and tropical astrology - https://en.wikipedia.org/wiki/Sidereal_and_tropical_astrology
+- Chinese zodiac - https://en.wikipedia.org/wiki/Chinese_zodiac
 
 ## License
 The code is available under the [MIT license](LICENSE.md).
