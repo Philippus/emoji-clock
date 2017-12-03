@@ -7,7 +7,7 @@
 
 Emoji-clock has the following features:
 - generate the nearest emoji clock face short code for a given date-time.
-- generate the emoji moon phase short code for a given date-time.
+- generate the emoji lunar phase short code for a given date-time.
 - generate the (tropical) zodiac sign short code for a given date-time.
 - generate the chinese zodiac sign short code for a given date-time.
 
@@ -48,9 +48,9 @@ import nl.gn0s1s.emojiclock.EmojiLunarPhase
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
 
-EmojiLunarPhase.moonPhaseShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
+EmojiLunarPhase.lunarPhaseShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
 // res0: String = full_moon
-EmojiLunarPhase.moonPhaseShortCode(java.time.LocalDateTime.of(2017, 12, 10, 0, 0)).emoji
+EmojiLunarPhase.lunarPhaseShortCode(java.time.LocalDateTime.of(2017, 12, 10, 0, 0)).emoji
 // res1: com.lightbend.emoji.Emoji = 🌗
 
 EmojiLunarPhase.now() // at 1st December 2017
