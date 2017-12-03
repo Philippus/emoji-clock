@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Philippus/emoji-clock.svg?branch=master)](https://travis-ci.org/Philippus/emoji-clock)
 [![codecov](https://codecov.io/gh/Philippus/emoji-clock/branch/master/graph/badge.svg)](https://codecov.io/gh/Philippus/emoji-clock)
-![Current Version](https://img.shields.io/badge/version-0.1.2-brightgreen.svg?style=flat "0.1.2")
+![Current Version](https://img.shields.io/badge/version-0.2.0-brightgreen.svg?style=flat "0.2.0")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat "MIT")](LICENSE.md)
 
 Emoji-clock has the following features:
