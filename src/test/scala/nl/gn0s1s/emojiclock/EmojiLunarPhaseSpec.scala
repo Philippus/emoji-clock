@@ -1,22 +1,16 @@
 package nl.gn0s1s.emojiclock
 
-import java.time.{ LocalDateTime, ZoneOffset }
+import java.time.LocalDateTime
 
 import com.lightbend.emoji.ShortCodes
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
-import org.scalacheck.{ Arbitrary, Gen, Properties }
+import org.scalacheck.Properties
 import org.scalacheck.Prop.forAll
 
+import Generators._
+
 object EmojiLunarPhaseSpec extends Properties("EmojiLunarPhase") {
-  def genDateTime: Gen[LocalDateTime] = {
-    val start = LocalDateTime.of(1900, 1, 1, 0, 0, 0).toEpochSecond(ZoneOffset.UTC)
-    val end = LocalDateTime.of(2100, 1, 1, 0, 0, 0).toEpochSecond(ZoneOffset.UTC)
-    Gen.choose(start, end).map(x ⇒ LocalDateTime.ofEpochSecond(x, 0, ZoneOffset.UTC))
-  }
-
-  implicit val arbitraryDateTime: Arbitrary[LocalDateTime] = Arbitrary(genDateTime)
-
   property("generates a valid moon phase for the current date-time") = {
     println(EmojiLunarPhase.now().emoji)
     EmojiLunarPhase.phases.contains(EmojiLunarPhase.now())
