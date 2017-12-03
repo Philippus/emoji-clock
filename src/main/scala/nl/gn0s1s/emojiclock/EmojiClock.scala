@@ -1,5 +1,7 @@
 package nl.gn0s1s.emojiclock
 
+import java.time.LocalDateTime
+
 object EmojiClock {
   def clockFaceShortCode(hour: Int, minute: Int): String = {
     def twelveHourClock(hour: Int) = if (hour % 12 == 0) 12 else hour % 12
@@ -12,7 +14,7 @@ object EmojiClock {
   }
 
   def now(): String = {
-    val current = java.time.LocalDateTime.now()
+    val current = LocalDateTime.now()
     clockFaceShortCode(current.getHour, current.getMinute)
   }
 }
