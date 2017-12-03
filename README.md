@@ -64,9 +64,9 @@ import nl.gn0s1s.emojiclock.EmojiZodiacSign
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
 
-EmojiZodiacSign.zodiacSignShortCode(2018, 1, 31)
+EmojiZodiacSign.zodiacSignShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
 // res0: String = aquarius
-EmojiZodiacSign.zodiacSignShortCode(2017, 5, 5).emoji
+EmojiZodiacSign.zodiacSignShortCode(java.time.LocalDateTime.of(2017, 5, 5, 0, 0)).emoji
 // res1: com.lightbend.emoji.Emoji = ♉
 
 EmojiZodiacSign.now() // at 2nd December 2017
@@ -80,9 +80,9 @@ import nl.gn0s1s.emojiclock.EmojiChineseZodiac
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
 
-EmojiChineseZodiac.chineseZodiacSignShortCode(2018, 1, 31)
+EmojiChineseZodiac.chineseZodiacSignShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
 // res0: String = rooster
-EmojiChineseZodiac.chineseZodiacSignShortCode(2015, 5, 5).emoji
+EmojiChineseZodiac.chineseZodiacSignShortCode(java.time.LocalDateTime.of(2015, 5, 5, 0, 0)).emoji
 // res1: com.lightbend.emoji.Emoji = 🐐
 
 EmojiChineseZodiac.now() // at 1st January 2019
