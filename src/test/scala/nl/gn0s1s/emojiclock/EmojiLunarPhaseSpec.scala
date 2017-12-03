@@ -13,7 +13,7 @@ import Generators._
 object EmojiLunarPhaseSpec extends Properties("EmojiLunarPhase") {
   property("generates a valid moon phase for the current date-time") = {
     println(EmojiLunarPhase.now().emoji)
-    EmojiLunarPhase.phases.contains(EmojiLunarPhase.now())
+    EmojiLunarPhase.lunarPhases.contains(EmojiLunarPhase.now())
   }
 
   property("generate valid moon phase for a certain day") = forAll {
@@ -29,7 +29,7 @@ object EmojiLunarPhaseSpec extends Properties("EmojiLunarPhase") {
         val passedLunarPhase = EmojiLunarPhase.moonPhaseShortCode(dateTime.plusDays(i))
         passedLunarPhases += passedLunarPhase
       }
-      passedLunarPhases == EmojiLunarPhase.phases.toSet
+      passedLunarPhases == EmojiLunarPhase.lunarPhases.toSet
   }
 
   property("one year contains twelve or thirteen full moons") = forAll {
