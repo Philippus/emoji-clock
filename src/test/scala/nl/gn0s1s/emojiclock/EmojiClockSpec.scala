@@ -2,7 +2,6 @@ package nl.gn0s1s.emojiclock
 
 import java.time.LocalDateTime
 
-import com.lightbend.emoji.ShortCodes
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
 import org.scalacheck.Properties
@@ -11,16 +10,14 @@ import org.scalacheck.Prop.forAll
 import Generators._
 
 object EmojiClockSpec extends Properties("EmojiClock") {
-  val clockFacesShortCodes = ShortCodes.current.shortCodes.filter(_.startsWith("clock"))
-
   property("generates a valid clock face for the current date-time") = {
     println(EmojiClock.now().emoji)
-    clockFacesShortCodes.contains(EmojiClock.now())
+    EmojiClock.clockFaces.contains(EmojiClock.now())
   }
 
   property("generates valid clock faces") = forAll {
     (dateTime: LocalDateTime) =>
-      clockFacesShortCodes.contains(EmojiClock.clockFaceShortCode(dateTime))
+      EmojiClock.clockFaces.contains(EmojiClock.clockFaceShortCode(dateTime))
   }
 
   property("rounds to the nearest clock face") = {
@@ -56,6 +53,6 @@ object EmojiClockSpec extends Properties("EmojiClock") {
       for (h <- 1 to 12) {
         generatedClockShortCodes += EmojiClock.clockFaceShortCode(dateTime.withHour(h).withMinute(30))
       }
-      generatedClockShortCodes.equals(clockFacesShortCodes)
+      generatedClockShortCodes.equals(EmojiClock.clockFaces.toSet)
   }
 }
