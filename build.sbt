@@ -1,6 +1,6 @@
 name := "emoji-clock"
 organization := "nl.gn0s1s"
-version := "0.1.2"
+version := "0.2.0"
 startYear := Some(2017)
 homepage := Some(url("https://github.com/philippus/emoji-clock"))
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))

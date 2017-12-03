@@ -18,7 +18,7 @@ Add the following to your `build.sbt`:
 ```
 resolvers += Resolver.bintrayRepo("gn0s1s", "releases")
 
-libraryDependencies += "nl.gn0s1s" %% "emoji-clock" % "0.1.2"
+libraryDependencies += "nl.gn0s1s" %% "emoji-clock" % "0.2.0"
 ```
 
 ## Example usage
