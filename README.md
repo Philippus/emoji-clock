@@ -7,7 +7,7 @@
 
 Emoji-clock has the following features:
 - generate the nearest emoji clock face short code for a given time.
-- generate the emoji moon phase short code for a given time.
+- generate the emoji moon phase short code for a given date.
 - generate the (tropical) zodiac sign short code for a given date.
 - generate the chinese zodiac sign short code for a given date.
 
