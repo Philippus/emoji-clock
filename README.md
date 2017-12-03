@@ -7,7 +7,7 @@
 
 Emoji-clock has the following features:
 - generate the nearest emoji clock face short code for a given time.
-- generate the current moon phase short code for a given time.
+- generate the emoji moon phase short code for a given time.
 
 To view the emoji itself you will need an emoji library such as [Lightbend Emoji](https://github.com/typesafehub/lightbend-emoji).
 
