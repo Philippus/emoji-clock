@@ -14,7 +14,7 @@ object EmojiClockSpec extends Properties("EmojiClock") {
   val clockFacesShortCodes = ShortCodes.current.shortCodes.filter(_.startsWith("clock"))
 
   property("generates a valid clock face for the current date-time") = {
-    val current = java.time.LocalDateTime.now()
+    val current = LocalDateTime.now()
     println(EmojiClock.now().emoji)
     clockFacesShortCodes.contains(EmojiClock.clockFaceShortCode(current.getHour, current.getMinute))
   }
