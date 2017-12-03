@@ -36,8 +36,5 @@ object EmojiLunarPhase {
     phases(idx)
   }
 
-  def now(): String = {
-    val current = LocalDateTime.now()
-    moonPhaseShortCode(current)
-  }
+  def now(): String = moonPhaseShortCode(LocalDateTime.now())
 }
