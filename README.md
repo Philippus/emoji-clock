@@ -6,8 +6,10 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat "MIT")](LICENSE.md)
 
 Emoji-clock has the following features:
-- generate the nearest emoji clock face short code for a given time.
-- generate the emoji moon phase short code for a given time.
+- generate the nearest emoji clock face short code for a given date-time.
+- generate the emoji lunar phase short code for a given date-time.
+- generate the (tropical) zodiac sign short code for a given date-time.
+- generate the chinese zodiac sign short code for a given date-time.
 
 To view the emoji itself you will need an emoji library such as [Lightbend Emoji](https://github.com/typesafehub/lightbend-emoji).
 
@@ -30,9 +32,9 @@ import nl.gn0s1s.emojiclock.EmojiClock
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
 
-EmojiClock.clockFaceShortCode(1, 50)
+EmojiClock.clockFaceShortCode(java.time.LocalDateTime.of(2018, 1, 31, 1, 50))
 // res0: String = clock2
-EmojiClock.clockFaceShortCode(1, 50).emoji
+EmojiClock.clockFaceShortCode(java.time.LocalDateTime.of(2018, 1, 31, 1, 50)).emoji
 // res1: com.lightbend.emoji.Emoji = 🕑
 
 EmojiClock.now() // at 16:44
@@ -46,9 +48,9 @@ import nl.gn0s1s.emojiclock.EmojiLunarPhase
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
 
-EmojiLunarPhase.moonPhaseShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
+EmojiLunarPhase.lunarPhaseShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
 // res0: String = full_moon
-EmojiLunarPhase.moonPhaseShortCode(java.time.LocalDateTime.of(2017, 12, 10, 0, 0)).emoji
+EmojiLunarPhase.lunarPhaseShortCode(java.time.LocalDateTime.of(2017, 12, 10, 0, 0)).emoji
 // res1: com.lightbend.emoji.Emoji = 🌗
 
 EmojiLunarPhase.now() // at 1st December 2017
@@ -57,8 +59,43 @@ EmojiLunarPhase.now().emoji
 // res3: com.lightbend.emoji.Emoji = 🌕
 ```
 
+```scala
+import nl.gn0s1s.emojiclock.EmojiZodiacSign
+import com.lightbend.emoji.ShortCodes.Defaults._
+import com.lightbend.emoji.ShortCodes.Implicits._
+
+EmojiZodiacSign.zodiacSignShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
+// res0: String = aquarius
+EmojiZodiacSign.zodiacSignShortCode(java.time.LocalDateTime.of(2017, 5, 5, 0, 0)).emoji
+// res1: com.lightbend.emoji.Emoji = ♉
+
+EmojiZodiacSign.now() // at 2nd December 2017
+// res2: String = sagittarius
+EmojiZodiacSign.now().emoji
+// res3: com.lightbend.emoji.Emoji = ♐
+```
+
+```scala
+import nl.gn0s1s.emojiclock.EmojiChineseZodiac
+import com.lightbend.emoji.ShortCodes.Defaults._
+import com.lightbend.emoji.ShortCodes.Implicits._
+
+EmojiChineseZodiac.chineseZodiacSignShortCode(java.time.LocalDateTime.of(2018, 1, 31, 0, 0))
+// res0: String = rooster
+EmojiChineseZodiac.chineseZodiacSignShortCode(java.time.LocalDateTime.of(2015, 5, 5, 0, 0)).emoji
+// res1: com.lightbend.emoji.Emoji = 🐐
+
+EmojiChineseZodiac.now() // at 1st January 2019
+// res2: String = dog
+EmojiChineseZodiac.now().emoji
+// res3: com.lightbend.emoji.Emoji = 🐶
+```
+
 ## Links
 - Emo R package that does something similar for R - https://github.com/hadley/emo
+- Lunar phase - https://en.wikipedia.org/wiki/Lunar_phase
+- Sidereal and tropical astrology - https://en.wikipedia.org/wiki/Sidereal_and_tropical_astrology
+- Chinese zodiac - https://en.wikipedia.org/wiki/Chinese_zodiac
 
 ## License
 The code is available under the [MIT license](LICENSE.md).

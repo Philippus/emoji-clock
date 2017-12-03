@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 
 object EmojiLunarPhase {
   private val synodicCycle = 29.530588853
-  val phases = List(
+  val lunarPhases = List(
     "new_moon", "waxing_crescent_moon", "first_quarter_moon", "waxing_gibbous_moon",
     "full_moon", "waning_gibbous_moon", "last_quarter_moon", "waning_crescent_moon")
 
@@ -30,14 +30,11 @@ object EmojiLunarPhase {
     days % synodicCycle
   }
 
-  def moonPhaseShortCode(date: LocalDateTime) = {
+  def lunarPhaseShortCode(date: LocalDateTime): String = {
     val idx = ((1 + (dayInSynodicCycle(date) / synodicCycle * 8)) % 8).toInt
 
-    phases(idx)
+    lunarPhases(idx)
   }
 
-  def now(): String = {
-    val current = LocalDateTime.now()
-    moonPhaseShortCode(current)
-  }
+  def now(): String = lunarPhaseShortCode(LocalDateTime.now())
 }
