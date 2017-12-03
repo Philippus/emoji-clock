@@ -30,7 +30,7 @@ object EmojiLunarPhase {
     days % synodicCycle
   }
 
-  def moonPhaseShortCode(date: LocalDateTime) = {
+  def moonPhaseShortCode(date: LocalDateTime): String = {
     val idx = ((1 + (dayInSynodicCycle(date) / synodicCycle * 8)) % 8).toInt
 
     phases(idx)
