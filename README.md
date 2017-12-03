@@ -9,6 +9,7 @@ Emoji-clock has the following features:
 - generate the nearest emoji clock face short code for a given time.
 - generate the emoji moon phase short code for a given time.
 - generate the (tropical) zodiac sign short code for a given date.
+- generate the chinese zodiac sign short code for a given date.
 
 To view the emoji itself you will need an emoji library such as [Lightbend Emoji](https://github.com/typesafehub/lightbend-emoji).
 
@@ -72,6 +73,22 @@ EmojiZodiacSign.now() // at 2nd December 2017
 // res2: String = sagittarius
 EmojiZodiacSign.now().emoji
 // res3: com.lightbend.emoji.Emoji = ♐
+```
+
+```scala
+import nl.gn0s1s.emojiclock.EmojiChineseZodiac
+import com.lightbend.emoji.ShortCodes.Defaults._
+import com.lightbend.emoji.ShortCodes.Implicits._
+
+EmojiChineseZodiac.chineseZodiacSignShortCode(2018, 1, 31)
+// res0: String = rooster
+EmojiChineseZodiac.chineseZodiacSignShortCode(2015, 5, 5).emoji
+// res1: com.lightbend.emoji.Emoji = 🐐
+
+EmojiChineseZodiac.now() // at 1st January 2019
+// res2: String = dog
+EmojiChineseZodiac.now().emoji
+// res3: com.lightbend.emoji.Emoji = 🐶
 ```
 
 ## Links
