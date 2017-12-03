@@ -6,10 +6,10 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat "MIT")](LICENSE.md)
 
 Emoji-clock has the following features:
-- generate the nearest emoji clock face short code for a given time.
-- generate the emoji moon phase short code for a given date.
-- generate the (tropical) zodiac sign short code for a given date.
-- generate the chinese zodiac sign short code for a given date.
+- generate the nearest emoji clock face short code for a given date-time.
+- generate the emoji moon phase short code for a given date-time.
+- generate the (tropical) zodiac sign short code for a given date-time.
+- generate the chinese zodiac sign short code for a given date-time.
 
 To view the emoji itself you will need an emoji library such as [Lightbend Emoji](https://github.com/typesafehub/lightbend-emoji).
 
@@ -32,9 +32,9 @@ import nl.gn0s1s.emojiclock.EmojiClock
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
 
-EmojiClock.clockFaceShortCode(1, 50)
+EmojiClock.clockFaceShortCode(java.time.LocalDateTime.of(2018, 1, 31, 1, 50))
 // res0: String = clock2
-EmojiClock.clockFaceShortCode(1, 50).emoji
+EmojiClock.clockFaceShortCode(java.time.LocalDateTime.of(2018, 1, 31, 1, 50)).emoji
 // res1: com.lightbend.emoji.Emoji = 🕑
 
 EmojiClock.now() // at 16:44

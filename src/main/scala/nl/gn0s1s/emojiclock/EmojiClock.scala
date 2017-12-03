@@ -3,18 +3,15 @@ package nl.gn0s1s.emojiclock
 import java.time.LocalDateTime
 
 object EmojiClock {
-  def clockFaceShortCode(hour: Int, minute: Int): String = {
+  def clockFaceShortCode(dateTime: LocalDateTime): String = {
     def twelveHourClock(hour: Int) = if (hour % 12 == 0) 12 else hour % 12
 
-    minute match {
-      case x if x <= 14 => s"clock${twelveHourClock(hour)}"
-      case x if x <= 44 => s"clock${twelveHourClock(hour)}30"
-      case _ => s"clock${twelveHourClock(hour + 1)}"
+    dateTime.getMinute match {
+      case x if x <= 14 => s"clock${twelveHourClock(dateTime.getHour)}"
+      case x if x <= 44 => s"clock${twelveHourClock(dateTime.getHour)}30"
+      case _ => s"clock${twelveHourClock(dateTime.getHour + 1)}"
     }
   }
 
-  def now(): String = {
-    val current = LocalDateTime.now()
-    clockFaceShortCode(current.getHour, current.getMinute)
-  }
+  def now(): String = clockFaceShortCode(LocalDateTime.now())
 }
