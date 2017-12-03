@@ -5,11 +5,11 @@
 ![Current Version](https://img.shields.io/badge/version-0.2.0-brightgreen.svg?style=flat "0.2.0")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat "MIT")](LICENSE.md)
 
-Emoji-clock has the following features:
-- generate the nearest emoji clock face short code for a given date-time.
-- generate the emoji lunar phase short code for a given date-time.
-- generate the (tropical) zodiac sign short code for a given date-time.
-- generate the chinese zodiac sign short code for a given date-time.
+Emoji-clock can, when given a date-time, generate the applicable emoji short code for:
+- clock faces
+- lunar phases
+- (tropical) zodiac signs
+- chinese zodiac signs
 
 To view the emoji itself you will need an emoji library such as [Lightbend Emoji](https://github.com/typesafehub/lightbend-emoji).
 
