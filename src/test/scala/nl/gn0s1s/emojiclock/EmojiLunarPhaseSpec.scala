@@ -16,13 +16,13 @@ object EmojiLunarPhaseSpec extends Properties("EmojiLunarPhase") {
     EmojiLunarPhase.lunarPhases.contains(EmojiLunarPhase.now())
   }
 
-  property("generate valid lunar phase for a certain day") = forAll {
+  property("generates a valid lunar phase for any date-time") = forAll {
     dateTime: LocalDateTime =>
       val lunarPhasesShortCodes = ShortCodes.current.shortCodes.filter(_.endsWith("_moon")).filterNot(_ == "crescent_moon")
       lunarPhasesShortCodes.contains(EmojiLunarPhase.lunarPhaseShortCode(dateTime))
   }
 
-  property("pass all lunar phases in a synodic cycle") = forAll {
+  property("passes all lunar phases in a synodic cycle") = forAll {
     (dateTime: LocalDateTime) =>
       var passedLunarPhases = scala.collection.mutable.Set.empty[String]
       for (i <- 1 to 30) {
@@ -32,7 +32,7 @@ object EmojiLunarPhaseSpec extends Properties("EmojiLunarPhase") {
       passedLunarPhases == EmojiLunarPhase.lunarPhases.toSet
   }
 
-  property("one year contains twelve or thirteen full moons") = forAll {
+  property("passes twelve or thirteen full moons in a year") = forAll {
     (dateTime: LocalDateTime) =>
       var fullMoons = 0
       for (i <- 1 to 366) {
