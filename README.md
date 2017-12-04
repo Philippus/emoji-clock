@@ -15,7 +15,8 @@ To view the emoji itself you will need an emoji library such as [Lightbend Emoji
 
 ## Installation
 
-Add the following to your `build.sbt`:
+Emoji-clock is published for Scala 2.11 and 2.12, but requires Java 8. To start using it add the following to your
+`build.sbt`:
 
 ```
 resolvers += Resolver.bintrayRepo("gn0s1s", "releases")
