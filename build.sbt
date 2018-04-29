@@ -14,7 +14,7 @@ bintrayRepository := "releases"
 resolvers += Resolver.typesafeIvyRepo("releases")
 libraryDependencies ++= Seq(
   "com.lightbend" %% "emoji" % "1.2.0" % Test,
-  "org.scalacheck" %% "scalacheck" % "1.13.5" % Test)
+  "org.scalacheck" %% "scalacheck" % "1.14.0" % Test)
 
 pomExtra :=
   <scm>
