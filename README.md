@@ -94,6 +94,7 @@ EmojiChineseZodiac.now().emoji
 
 ## Links
 - Emo R package that does something similar for R - https://github.com/hadley/emo
+- Rust crate that does something similar for the cli - https://github.com/softprops/emoji-clock
 - Lunar phase - https://en.wikipedia.org/wiki/Lunar_phase
 - Sidereal and tropical astrology - https://en.wikipedia.org/wiki/Sidereal_and_tropical_astrology
 - Chinese zodiac - https://en.wikipedia.org/wiki/Chinese_zodiac
