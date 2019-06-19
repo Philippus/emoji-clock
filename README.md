@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Philippus/emoji-clock.svg?branch=master)](https://travis-ci.org/Philippus/emoji-clock)
 [![codecov](https://codecov.io/gh/Philippus/emoji-clock/branch/master/graph/badge.svg)](https://codecov.io/gh/Philippus/emoji-clock)
-![Current Version](https://img.shields.io/badge/version-0.3.0-brightgreen.svg?style=flat "0.3.0")
+![Current Version](https://img.shields.io/badge/version-0.3.1-brightgreen.svg?style=flat "0.3.1")
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat "MIT")](LICENSE.md)
 
 Emoji-clock can, when given a date-time, generate the applicable emoji short code for:
@@ -15,13 +15,12 @@ To view the emoji itself you will need an emoji library such as [Lightbend Emoji
 
 ## Installation
 
-Emoji-clock is published for Scala 2.11 and 2.12, but requires Java 8. To start using it add the following to your
-`build.sbt`:
+Emoji-clock is published for Scala 2.11, 2.12, and 2.13. To start using it add the following to your `build.sbt`:
 
 ```
 resolvers += Resolver.bintrayRepo("gn0s1s", "releases")
 
-libraryDependencies += "nl.gn0s1s" %% "emoji-clock" % "0.3.0"
+libraryDependencies += "nl.gn0s1s" %% "emoji-clock" % "0.3.1"
 ```
 
 ## Example usage
