@@ -5,7 +5,7 @@ startYear := Some(2017)
 homepage := Some(url("https://github.com/philippus/emoji-clock"))
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 
-crossScalaVersions := List("2.11.12", "2.12.9", "2.13.0")
+crossScalaVersions := List("2.12.9", "2.13.0")
 scalaVersion := "2.12.9"
 
 bintrayOrganization := Some("gn0s1s")
