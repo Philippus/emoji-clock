@@ -1,0 +1,27 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        scala-version: [2.12.11, 2.13.3]
+        java-version: [8, 11]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java-version }}
+      - name: Run tests
+        run: sbt ++${{ matrix.scala-version }} clean coverage test coverageReport
+      - name: Upload coverage report
+        run: bash <(curl -s https://codecov.io/bash)
