@@ -11,7 +11,6 @@ scalaVersion := "2.13.5"
 bintrayOrganization := Some("gn0s1s")
 bintrayRepository := "releases"
 
-resolvers += Resolver.typesafeIvyRepo("releases")
 libraryDependencies ++= Seq(
   "com.lightbend" %% "emoji" % "1.2.2" % Test,
   "org.scalacheck" %% "scalacheck" % "1.15.3" % Test)
