@@ -12,7 +12,7 @@ bintrayOrganization := Some("gn0s1s")
 bintrayRepository := "releases"
 
 libraryDependencies ++= Seq(
-  "com.lightbend" %% "emoji" % "1.2.2" % Test,
+  "com.lightbend" %% "emoji" % "1.2.3" % Test,
   "org.scalacheck" %% "scalacheck" % "1.15.3" % Test)
 
 pomExtra :=
