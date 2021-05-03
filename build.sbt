@@ -13,7 +13,7 @@ bintrayRepository := "releases"
 
 libraryDependencies ++= Seq(
   "com.lightbend" %% "emoji" % "1.2.3" % Test,
-  "org.scalacheck" %% "scalacheck" % "1.15.3" % Test)
+  "org.scalacheck" %% "scalacheck" % "1.15.4" % Test)
 
 pomExtra :=
   <scm>
