@@ -13,6 +13,11 @@ developers := List(
   )
 )
 
+ThisBuild / versionScheme := Some("semver-spec")
+ThisBuild / versionPolicyIntention := Compatibility.None
+
+Compile / packageBin / packageOptions += Package.ManifestAttributes("Automatic-Module-Name" -> "nl.gn0s1s.emojiclock")
+
 crossScalaVersions := List("2.12.13", "2.13.6")
 scalaVersion := crossScalaVersions.value.last
 
