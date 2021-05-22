@@ -22,7 +22,10 @@ object EmojiLunarPhase {
     (1990, 1, 26),
     (2000, 1, 6),
     (2010, 1, 15),
-    (2017, 1, 28))
+    (2017, 1, 28),
+    (2020, 1, 24),
+    (2030, 1, 4),
+    (2040, 1, 14))
 
   private def dayInSynodicCycle(date: LocalDateTime) = {
     val nearestNewMoonBefore = newMoons.filter(x => LocalDateTime.of(x._1, x._2, x._3, 0, 0).isBefore(date)).minBy(x => Duration.between(LocalDateTime.of(x._1, x._2, x._3, 0, 0), date).toDays)
