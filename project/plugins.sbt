@@ -1,6 +1,6 @@
 addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.3")
 
-addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.9.1")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.9.2")
 
 addSbtPlugin("ch.epfl.scala" % "sbt-version-policy" % "2.0.1")
 
