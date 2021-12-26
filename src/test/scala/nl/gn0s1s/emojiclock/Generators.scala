@@ -1,8 +1,8 @@
 package nl.gn0s1s.emojiclock
 
-import java.time.{ LocalDateTime, ZoneOffset }
+import java.time.{LocalDateTime, ZoneOffset}
 
-import org.scalacheck.{ Arbitrary, Gen }
+import org.scalacheck.{Arbitrary, Gen}
 
 object Generators {
   def genDateTime: Gen[LocalDateTime] = {

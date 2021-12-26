@@ -1,10 +1,10 @@
 package nl.gn0s1s.emojiclock
 
-import java.time.{ LocalDateTime, ZoneOffset }
+import java.time.{LocalDateTime, ZoneOffset}
 
 import com.lightbend.emoji.ShortCodes.Defaults._
 import com.lightbend.emoji.ShortCodes.Implicits._
-import org.scalacheck.{ Gen, Properties }
+import org.scalacheck.{Gen, Properties}
 import org.scalacheck.Prop.forAll
 
 object EmojiChineseZodiacSpec extends Properties("EmojiChineseZodiac") {

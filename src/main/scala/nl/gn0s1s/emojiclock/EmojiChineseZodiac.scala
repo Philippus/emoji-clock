@@ -1,11 +1,10 @@
 package nl.gn0s1s.emojiclock
 
-import java.time.{ LocalDate, LocalDateTime }
+import java.time.{LocalDate, LocalDateTime}
 
 object EmojiChineseZodiac {
-  val chineseZodiacSigns = List(
-    "rat", "ox", "tiger", "rabbit", "dragon", "snake",
-    "horse", "goat", "monkey", "rooster", "dog", "pig")
+  val chineseZodiacSigns =
+    List("rat", "ox", "tiger", "rabbit", "dragon", "snake", "horse", "goat", "monkey", "rooster", "dog", "pig")
 
   val chineseZodiacMap: Map[((Int, Int, Int), (Int, Int, Int)), String] = Map(
     ((1924, 2, 5), (1925, 1, 23)) -> "rat",
@@ -127,13 +126,18 @@ object EmojiChineseZodiac {
     ((2040, 2, 12), (2041, 1, 31)) -> "monkey",
     ((2041, 2, 1), (2042, 1, 21)) -> "rooster",
     ((2042, 1, 22), (2043, 2, 9)) -> "dog",
-    ((2043, 2, 10), (2044, 1, 29)) -> "pig")
+    ((2043, 2, 10), (2044, 1, 29)) -> "pig"
+  )
 
   def chineseZodiacSignShortCode(date: LocalDateTime): String = {
     val checkDate = date.toLocalDate
-    chineseZodiacMap.find(x =>
-      (!LocalDate.of(x._1._1._1, x._1._1._2, x._1._1._3).isAfter(checkDate)
-        && !LocalDate.of(x._1._2._1, x._1._2._2, x._1._2._3).isBefore(checkDate))).map(x => x._2).getOrElse("")
+    chineseZodiacMap
+      .find(x =>
+        (!LocalDate.of(x._1._1._1, x._1._1._2, x._1._1._3).isAfter(checkDate)
+          && !LocalDate.of(x._1._2._1, x._1._2._2, x._1._2._3).isBefore(checkDate))
+      )
+      .map(x => x._2)
+      .getOrElse("")
   }
 
   def now(): String = chineseZodiacSignShortCode(LocalDateTime.now())
