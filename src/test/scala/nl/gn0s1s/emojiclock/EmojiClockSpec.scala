@@ -15,44 +15,40 @@ object EmojiClockSpec extends Properties("EmojiClock") {
     EmojiClock.clockFaces.contains(EmojiClock.now())
   }
 
-  property("generates valid clock faces") = forAll {
-    (dateTime: LocalDateTime) =>
-      EmojiClock.clockFaces.contains(EmojiClock.clockFaceShortCode(dateTime))
+  property("generates valid clock faces") = forAll { (dateTime: LocalDateTime) =>
+    EmojiClock.clockFaces.contains(EmojiClock.clockFaceShortCode(dateTime))
   }
 
   property("rounds to the nearest clock face") = {
     def twelveHourClock(hour: Int) = if (hour % 12 == 0) 12 else hour % 12
 
-    val correctHour = forAll {
-      dateTime: LocalDateTime =>
-        val (h, m) = (dateTime.getHour, dateTime.getMinute)
-        EmojiClock.clockFaceShortCode(dateTime) match {
-          case x if x.stripSuffix("30").equals("clock" + twelveHourClock(h + 1)) => m > 44
-          case x if x.stripSuffix("30").equals("clock" + twelveHourClock(h)) => m <= 44
-        }
+    val correctHour = forAll { dateTime: LocalDateTime =>
+      val (h, m) = (dateTime.getHour, dateTime.getMinute)
+      EmojiClock.clockFaceShortCode(dateTime) match {
+        case x if x.stripSuffix("30").equals("clock" + twelveHourClock(h + 1)) => m > 44
+        case x if x.stripSuffix("30").equals("clock" + twelveHourClock(h)) => m <= 44
+      }
     }
 
-    val correctMinute = forAll {
-      dateTime: LocalDateTime =>
-        val m = dateTime.getMinute
-        EmojiClock.clockFaceShortCode(dateTime) match {
-          case x if x.endsWith("30") => m > 14 && m <= 44
-          case _ => m <= 14 || m > 44
-        }
+    val correctMinute = forAll { dateTime: LocalDateTime =>
+      val m = dateTime.getMinute
+      EmojiClock.clockFaceShortCode(dateTime) match {
+        case x if x.endsWith("30") => m > 14 && m <= 44
+        case _ => m <= 14 || m > 44
+      }
     }
 
     correctHour && correctMinute
   }
 
-  property("generates all clock faces") = forAll {
-    dateTime: LocalDateTime =>
-      var generatedClockShortCodes = Set[String]()
-      for (h <- 1 to 12) {
-        generatedClockShortCodes += EmojiClock.clockFaceShortCode(dateTime.withHour(h).withMinute(0))
-      }
-      for (h <- 1 to 12) {
-        generatedClockShortCodes += EmojiClock.clockFaceShortCode(dateTime.withHour(h).withMinute(30))
-      }
-      generatedClockShortCodes.equals(EmojiClock.clockFaces.toSet)
+  property("generates all clock faces") = forAll { dateTime: LocalDateTime =>
+    var generatedClockShortCodes = Set[String]()
+    for (h <- 1 to 12) {
+      generatedClockShortCodes += EmojiClock.clockFaceShortCode(dateTime.withHour(h).withMinute(0))
+    }
+    for (h <- 1 to 12) {
+      generatedClockShortCodes += EmojiClock.clockFaceShortCode(dateTime.withHour(h).withMinute(30))
+    }
+    generatedClockShortCodes.equals(EmojiClock.clockFaces.toSet)
   }
 }

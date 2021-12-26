@@ -6,8 +6,15 @@ import java.time.LocalDateTime
 object EmojiLunarPhase {
   private val synodicCycle = 29.530588853
   val lunarPhases = List(
-    "new_moon", "waxing_crescent_moon", "first_quarter_moon", "waxing_gibbous_moon",
-    "full_moon", "waning_gibbous_moon", "last_quarter_moon", "waning_crescent_moon")
+    "new_moon",
+    "waxing_crescent_moon",
+    "first_quarter_moon",
+    "waxing_gibbous_moon",
+    "full_moon",
+    "waning_gibbous_moon",
+    "last_quarter_moon",
+    "waning_crescent_moon"
+  )
 
   private val newMoons: List[(Int, Int, Int)] = List(
     (1900, 1, 1),
@@ -25,11 +32,16 @@ object EmojiLunarPhase {
     (2017, 1, 28),
     (2020, 1, 24),
     (2030, 1, 4),
-    (2040, 1, 14))
+    (2040, 1, 14)
+  )
 
   private def dayInSynodicCycle(date: LocalDateTime) = {
-    val nearestNewMoonBefore = newMoons.filter(x => LocalDateTime.of(x._1, x._2, x._3, 0, 0).isBefore(date)).minBy(x => Duration.between(LocalDateTime.of(x._1, x._2, x._3, 0, 0), date).toDays)
-    val days = Duration.between(LocalDateTime.of(nearestNewMoonBefore._1, nearestNewMoonBefore._2, nearestNewMoonBefore._3, 0, 0), date).toDays
+    val nearestNewMoonBefore = newMoons
+      .filter(x => LocalDateTime.of(x._1, x._2, x._3, 0, 0).isBefore(date))
+      .minBy(x => Duration.between(LocalDateTime.of(x._1, x._2, x._3, 0, 0), date).toDays)
+    val days = Duration
+      .between(LocalDateTime.of(nearestNewMoonBefore._1, nearestNewMoonBefore._2, nearestNewMoonBefore._3, 0, 0), date)
+      .toDays
     days % synodicCycle
   }
 
