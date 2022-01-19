@@ -14,11 +14,12 @@ jobs:
     strategy:
       matrix:
         scala-version: [2.12.15, 2.13.8]
-        java-version: ["adopt@1.8", 11]
+        java-version: [8, 11]
     steps:
-      - uses: actions/checkout@v2.3.4
-      - uses: olafurpg/setup-scala@v13
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
         with:
+          distribution: temurin
           java-version: ${{ matrix.java-version }}
       - name: Run tests
         run: sbt ++${{ matrix.scala-version }} clean coverage test coverageReport
