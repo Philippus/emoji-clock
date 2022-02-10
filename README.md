@@ -89,6 +89,10 @@ EmojiChineseZodiac.now().emoji
 // res3: com.lightbend.emoji.Emoji = 🐶
 ```
 
+### sbt-prompt
+
+in [examples/sbt-prompt](examples/sbt-prompt) you can see how you could add an emoji clock to your [sbt-prompt](https://github.com/agemooij/sbt-prompt).
+
 ## Links
 - Emo R package that does something similar for R - https://github.com/hadley/emo
 - Rust crate that does something similar for the cli - https://github.com/softprops/emoji-clock
