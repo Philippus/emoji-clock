@@ -18,10 +18,10 @@ ThisBuild / versionPolicyIntention := Compatibility.None
 
 Compile / packageBin / packageOptions += Package.ManifestAttributes("Automatic-Module-Name" -> "nl.gn0s1s.emojiclock")
 
-crossScalaVersions := List("2.12.16", "2.13.10")
+crossScalaVersions := List("2.12.17", "2.13.10")
 scalaVersion := crossScalaVersions.value.last
 
 libraryDependencies ++= Seq(
   "com.lightbend" %% "emoji" % "1.3.0" % Test,
-  "org.scalacheck" %% "scalacheck" % "1.16.0" % Test
+  "org.scalacheck" %% "scalacheck" % "1.17.0" % Test
 )
