@@ -13,8 +13,8 @@ object EmojiZodiacSignSpec extends Properties("EmojiZodiacSign") {
     EmojiZodiacSign.zodiacSigns.contains(EmojiZodiacSign.now())
   }
 
-  val fromEpoch = LocalDateTime.of(1924, 2, 5, 0, 0).toEpochSecond(ZoneOffset.UTC)
-  val toEpoch = LocalDateTime.of(2044, 1, 29, 0, 0).toEpochSecond(ZoneOffset.UTC)
+  val fromEpoch      = LocalDateTime.of(1924, 2, 5, 0, 0).toEpochSecond(ZoneOffset.UTC)
+  val toEpoch        = LocalDateTime.of(2044, 1, 29, 0, 0).toEpochSecond(ZoneOffset.UTC)
   val genDateBetween = Gen.choose[Long](fromEpoch, toEpoch).map(x => LocalDateTime.ofEpochSecond(x, 0, ZoneOffset.UTC))
 
   property("generates a zodiac sign for any day from 192400205 to 20440129") = forAll(genDateBetween) { dateTime =>

@@ -36,7 +36,7 @@ object EmojiClock {
     dateTime.getMinute match {
       case x if x <= 14 => s"clock${twelveHourClock(dateTime.getHour)}"
       case x if x <= 44 => s"clock${twelveHourClock(dateTime.getHour)}30"
-      case _ => s"clock${twelveHourClock(dateTime.getHour + 1)}"
+      case _            => s"clock${twelveHourClock(dateTime.getHour + 1)}"
     }
   }
 

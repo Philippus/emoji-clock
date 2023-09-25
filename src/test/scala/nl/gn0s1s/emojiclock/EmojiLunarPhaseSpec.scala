@@ -34,7 +34,7 @@ object EmojiLunarPhaseSpec extends Properties("EmojiLunarPhase") {
   property("passes twelve or thirteen full moons in a year") = forAll { (dateTime: LocalDateTime) =>
     var fullMoons = 0
     for (i <- 1 to 366) {
-      val prevLunarPhase = EmojiLunarPhase.lunarPhaseShortCode(dateTime.plusDays(i - 1))
+      val prevLunarPhase   = EmojiLunarPhase.lunarPhaseShortCode(dateTime.plusDays(i - 1))
       val passedLunarPhase = EmojiLunarPhase.lunarPhaseShortCode(dateTime.plusDays(i))
       if (passedLunarPhase == "full_moon" && ((prevLunarPhase != passedLunarPhase) || i == 1)) {
         fullMoons += 1
