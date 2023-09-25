@@ -26,7 +26,7 @@ object EmojiClockSpec extends Properties("EmojiClock") {
       val (h, m) = (dateTime.getHour, dateTime.getMinute)
       EmojiClock.clockFaceShortCode(dateTime) match {
         case x if x.stripSuffix("30").equals("clock" + twelveHourClock(h + 1)) => m > 44
-        case x if x.stripSuffix("30").equals("clock" + twelveHourClock(h)) => m <= 44
+        case x if x.stripSuffix("30").equals("clock" + twelveHourClock(h))     => m <= 44
       }
     }
 
@@ -34,7 +34,7 @@ object EmojiClockSpec extends Properties("EmojiClock") {
       val m = dateTime.getMinute
       EmojiClock.clockFaceShortCode(dateTime) match {
         case x if x.endsWith("30") => m > 14 && m <= 44
-        case _ => m <= 14 || m > 44
+        case _                     => m <= 14 || m > 44
       }
     }
 
