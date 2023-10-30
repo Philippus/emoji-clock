@@ -7,7 +7,7 @@ import com.scalapenos.sbt.prompt._
 import nl.gn0s1s.emojiclock._
 
 def emojiClock(): Promptlet = text(
-  _ ⇒ {
+  _ => {
     EmojiClock.now().emoji.toString
   },
   NoStyle
