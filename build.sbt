@@ -23,5 +23,5 @@ scalaVersion       := crossScalaVersions.value.last
 
 libraryDependencies ++= Seq(
   "com.lightbend"  %% "emoji"      % "1.3.0"  % Test,
-  "org.scalacheck" %% "scalacheck" % "1.17.0" % Test
+  "org.scalacheck" %% "scalacheck" % "1.17.1" % Test
 )
