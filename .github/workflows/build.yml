@@ -17,6 +17,7 @@ jobs:
         with:
           distribution: temurin
           java-version: ${{ matrix.java-version }}
+      - uses: sbt/setup-sbt@v1
       - name: Run tests
         run: sbt ++${{ matrix.scala-version }} clean coverage test coverageReport
       - name: Upload coverage report
