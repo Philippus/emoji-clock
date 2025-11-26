@@ -18,7 +18,7 @@ ThisBuild / versionPolicyIntention := Compatibility.None
 
 Compile / packageBin / packageOptions += Package.ManifestAttributes("Automatic-Module-Name" -> "nl.gn0s1s.emojiclock")
 
-crossScalaVersions := List("2.12.20", "2.13.17")
+crossScalaVersions := List("2.12.20", "2.13.18")
 scalaVersion       := crossScalaVersions.value.last
 
 libraryDependencies ++= Seq(
