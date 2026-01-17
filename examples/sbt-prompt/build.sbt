@@ -13,5 +13,6 @@ def emojiClock(): Promptlet = text(
   NoStyle
 )
 
-promptTheme := com.scalapenos.sbt.prompt.PromptThemes.DefaultTheme
-  .copy(promptlets = emojiClock() +: com.scalapenos.sbt.prompt.PromptThemes.DefaultTheme.promptlets)
+promptTheme :=
+  com.scalapenos.sbt.prompt.PromptThemes.DefaultTheme
+    .copy(promptlets = emojiClock() +: com.scalapenos.sbt.prompt.PromptThemes.DefaultTheme.promptlets)
